@@ -38,8 +38,18 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
 
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarqube-scan-action@v4
+#   - name: SonarCloud Scan
+#      uses: SonarSource/sonarqube-scan-action@v4
+#      env:
+#        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#        SONAR_HOST_URL: https://sonarcloud.io
+    
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      with:
+        projectBaseDir: .
+        args: >
+            -Dsonar.organization=javiercaparo
+            -Dsonar.projectKey=javiercaparo_android-sonarcloud-test
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

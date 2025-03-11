@@ -7,10 +7,3 @@ plugins {
 }
 
 version = "1.0-SNAPSHOT"
-
-sonar {
-    properties {
-        property("sonar.projectKey", "javiercaparo_android-sonarcloud-test")
-        property("sonar.projectName", "android-sonarcloud-test")
-    }
-}
