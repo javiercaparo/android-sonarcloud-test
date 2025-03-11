@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'jetbrains'
+        distribution: 'zulu'
 
     - name: Run Unit Tests
       run: ./gradlew test
