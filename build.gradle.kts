@@ -3,4 +3,14 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
+    id("org.sonarqube") version "6.0.1.5171"
+}
+
+version = "1.0-SNAPSHOT"
+
+sonar {
+    properties {
+        property("sonar.projectKey", "javiercaparo_android-sonarcloud-test")
+        property("sonar.projectName", "android-sonarcloud-test")
+    }
 }
