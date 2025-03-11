@@ -5,10 +5,16 @@ on:
 
     push:
         branches: [ main ]
+        paths-ignore:
+          - '**.md'
+          - '.github/**'
 
     pull_request:
         branches: [ main ]
         types: [opened, synchronize, reopened]
+        paths-ignore:
+          - '**.md'
+          - '.github/**'
 
 jobs:
   build:
@@ -47,9 +53,11 @@ jobs:
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       with:
-        projectBaseDir: .
+        projectBaseDir: app/src
         args: >
             -Dsonar.organization=javiercaparo
             -Dsonar.projectKey=javiercaparo_android-sonarcloud-test
+            -Dsonar.tests=tests/
+            -Dsonar.verbose=true
       env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
