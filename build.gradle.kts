@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     id("org.sonarqube") version "6.0.1.5171"
+    alias(libs.plugins.ktlint)
 }
 
 version = "1.0-SNAPSHOT"
