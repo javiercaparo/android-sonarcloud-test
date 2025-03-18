@@ -7,9 +7,4 @@ plugins {
     alias(libs.plugins.ktlint)
 }
 
-repositories {
-  // Required to download KtLint
-  mavenCentral()
-}
-
 version = "1.0-SNAPSHOT"
