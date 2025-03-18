@@ -4,7 +4,12 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     id("org.sonarqube") version "6.0.1.5171"
-    id "org.jlleitschuh.gradle.ktlint" version "7.1.0"
+    alias(libs.plugins.ktlint)
+}
+
+repositories {
+  // Required to download KtLint
+  mavenCentral()
 }
 
 version = "1.0-SNAPSHOT"
