@@ -54,6 +54,9 @@ jobs:
         sudo udevadm control --reload-rules
         sudo udevadm trigger --name-match=kvm
 
+    - name: Change wrapper permissions
+      run: chmod +x ./gradlew
+    
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
