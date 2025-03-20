@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     id("org.sonarqube") version "6.0.1.5171"
     alias(libs.plugins.ktlint)
+    id("com.google.gms.google-services") version "4.4.2" apply false
 }
 
 version = "1.0-SNAPSHOT"
